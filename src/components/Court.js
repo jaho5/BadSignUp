@@ -11,13 +11,13 @@ export default function Court({className, courtNum, sendData}) {
   });
 
   const addToQueue = () => {
-    // localStorage.removeItem("lastname");
-    if (localStorage.lastname) {
-      const newPlayers = [...players, localStorage.lastname];
+    if (localStorage.name) {
+      const newPlayers = [...players, localStorage.name];
       setPlayers(newPlayers);
     } else {
-      console.log('no lastname');
+      console.log('no name');
     }
+    //localStorage.removeItem("name");
   }
 
   const displayCourt = () => {
@@ -26,8 +26,8 @@ export default function Court({className, courtNum, sendData}) {
 
   return (
     <div className={className}>
-      <div>Court {courtNum}: </div>
-      <Queue players={players} onClick={sendData(players)}/>
+      <div >Court {courtNum}: </div>
+      <Queue players={players} onClick={()=>sendData(players)}/>
       <button onClick={addToQueue}>+</button>
     </div>
   )

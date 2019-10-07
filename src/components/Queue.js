@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
 
-export default function Queue({players}) {
+export default function Queue({players, onClick}) {
 
   return (
-    <div>
-      {players.map((player,i) => (
-        <div key={i}>{player}</div>
+    <div onClick={onClick}>
+      {players.slice(0,4).map((player,i) => (
+        <div key={i}>{i+1}. {player}</div>
       ))}
     </div>  
   )

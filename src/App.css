@@ -1,9 +1,9 @@
 html, body, .grid-container { height: 100%; margin: 0; }
 
-.grid-container * { 
+/* .grid-container * { 
  border: 1px solid red;
  position: relative;
-}
+} */
 
 .grid-container *:after { 
  position: absolute;
@@ -27,6 +27,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
   grid-template-areas: "court-6 court-3" 
                        "court-5 court-2" 
                        "court-4 court-1";
+  gap: 1rem; 
   grid-area: courts;
 }
 
