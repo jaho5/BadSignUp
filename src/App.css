@@ -34,8 +34,11 @@ html, body, .grid-container { height: 100%; margin: 0; }
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 2fr 1fr;
-  grid-template-areas: "." "." ".";
+  grid-template-areas: "." "." "queue-button";
+  grid-area: court-1;
 }
+
+.queue-button { grid-area: queue-button; }
 
 .court-1 { grid-area: court-1; }
 

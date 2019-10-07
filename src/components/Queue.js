@@ -1,13 +1,11 @@
 import React, {useState} from 'react'
 
-export default function Queue() {
-
-  const [players, setPlayers] = useState(["jason","sunny","kenneth"]);
+export default function Queue({players}) {
 
   return (
     <div>
-      {players.map((player) => (
-        <div>{player}</div>
+      {players.map((player,i) => (
+        <div key={i}>{player}</div>
       ))}
     </div>  
   )
