@@ -1,0 +1,52 @@
+html, body, .grid-container { height: 100%; margin: 0; }
+
+.grid-container * { 
+ border: 1px solid red;
+ position: relative;
+}
+
+.grid-container *:after { 
+ position: absolute;
+ top: 0;
+ left: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 20% 1fr 1fr;
+  grid-template-rows: 8% 1fr 5%;
+  grid-template-areas: ". . ." 
+                       ". courts court-view" 
+                       ". . .";
+}
+
+.courts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "court-6 court-3" 
+                       "court-5 court-2" 
+                       "court-4 court-1";
+  grid-area: courts;
+}
+
+.court-1, .court-2, .court-3, .court-4, .court-5, .court-6 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-areas: "." "." ".";
+}
+
+.court-1 { grid-area: court-1; }
+
+.court-2 { grid-area: court-2; }
+
+.court-3 { grid-area: court-3; }
+
+.court-4 { grid-area: court-4; }
+
+.court-5 { grid-area: court-5; }
+
+.court-6 { grid-area: court-6; }
+
+.court-view { grid-area: court-view; }
