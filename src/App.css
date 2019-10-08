@@ -31,12 +31,12 @@ html, body, .grid-container { height: 100%; margin: 0; }
   }
 }
 
-/* .header {
+.header {
   margin: auto;
   padding: 0px;
   background-color: grey;
   grid-area: header;
-} */
+}
 
 .courts {
   display: grid;
@@ -82,10 +82,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
   grid-area: court-view; 
 }
 
-.court-view h1 {
+.court-view * {
   margin: 0px;
 }
 
-.court-view div {
-  margin: 0px;
-}
