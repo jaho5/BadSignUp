@@ -75,7 +75,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
   padding: 20px 20px;
   display: grid;
   grid-template-rows: auto repeat(auto, 1em);
-  grid-template-areas: 'title' '.' '.' '.' '.';
+  grid-template-areas: 'title' '.' '.' '.' '.' '.';
   column-gap: 1em;
   grid-auto-flow: column;
   grid-area: court-view; 

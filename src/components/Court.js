@@ -1,16 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import './Court.css';
 import Queue from './Queue';
-import { addToDb, getCourtPlayers } from '../database/dbfunctions';
+import { turnOnFirebase, addToDb } from '../database/dbfunctions';
 
-export default function Court({className, courtNum, sendData}) {
-  
+
+export default function Court({className, courtNum, sendData, login}) {
+
   const [players, setPlayers] = useState([]);
-
-  //getCourtPlayers(courtNum,setPlayers);
-  // useEffect(() => {
-  //   console.log(players);
-  // })
+  useEffect(() => {
+    turnOnFirebase(courtNum, setPlayers);
+  }, []);
 
   const queueAction = () => {
     if (localStorage.name) {
@@ -20,10 +19,9 @@ export default function Court({className, courtNum, sendData}) {
       sendData(courtNum);
     } else {
       console.log('no name');
+      login();
     }
-    //localStorage.removeItem("name");
   }
-
   return (
     <div className={className}>
       <div onClick={()=>sendData(courtNum)}>Court {courtNum}: </div>
