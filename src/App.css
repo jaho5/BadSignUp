@@ -15,14 +15,13 @@ html, body, .grid-container { height: 100%; margin: 0; }
   display: grid;
   grid-template-columns: 20% 1fr 1fr;
   grid-template-rows: 8% 1fr 5%;
-  grid-template-areas: ". . ." 
+  grid-template-areas: "header header header" 
                        ". courts court-view" 
                        ". . .";
 }
 
 @media (max-width: 700px) {
   .grid-container {
-    padding: 0px 20px;
     grid-template-columns: 1fr;
     grid-template-rows: 5% 1fr 1fr;
     grid-template-areas: "header"
@@ -32,7 +31,6 @@ html, body, .grid-container { height: 100%; margin: 0; }
 }
 
 .header {
-  margin: auto;
   padding: 0px;
   background-color: grey;
   grid-area: header;
@@ -40,6 +38,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
 
 .courts {
   display: grid;
+  padding: 0px 20px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: "court-6 court-3" 
@@ -73,7 +72,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
 
 .court-view {
   height: 100%;
-  padding: 20px 0px;
+  padding: 20px 20px;
   display: grid;
   grid-template-rows: auto repeat(auto, 1em);
   grid-template-areas: 'title' '.' '.' '.' '.';

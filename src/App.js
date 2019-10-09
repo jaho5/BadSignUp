@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react';
 import './App.css';
 import Court from './components/Court';
-import { FirebaseContext } from './components/Firebase';
+// import { FirebaseContext } from './components/Firebase';
+import { addToDb, removeFromDb, getCourtPlayers } from './database/dbfunctions';
 
 localStorage.setItem("name", "Smith");
 
@@ -10,15 +11,14 @@ function App() {
   const [viewCourt, setViewCourt] = useState(false);
   const [courtPlayers, setCourtPlayers] = useState([]);
   
-  const firebase = useContext(FirebaseContext);
-  firebase.db.ref('a/').set({
-    b: ['a','b','c']
-  });
+  // const firebase = useContext(FirebaseContext);
 
-  const showCourtView = (courtData) => {
+  //removeFromDb('/')
+
+  const showCourtView = (courtNum) => {
     setViewCourt(true);
-    setCourtPlayers(courtData);
-    console.log(courtData);
+    // setCourtPlayers([courtNum]);
+    getCourtPlayers(courtNum,setCourtPlayers);
   }
   
   return (

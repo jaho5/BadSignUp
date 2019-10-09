@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 
-import Firebase, { FirebaseContext } from './components/Firebase';
+// import Firebase, { FirebaseContext } from './components/Firebase';
 
 ReactDOM.render(
-  <FirebaseContext.Provider value={new Firebase()}>
+  // <FirebaseContext.Provider value={new Firebase()}>
 
     <App />
   
-  </FirebaseContext.Provider>
+  // </FirebaseContext.Provider>
 ,
   document.getElementById('root')
 );
