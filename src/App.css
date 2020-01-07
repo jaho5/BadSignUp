@@ -5,6 +5,11 @@ html, body, .grid-container { height: 100%; margin: 0; }
  position: relative;
 } */
 
+
+div {
+  text-overflow: ellipsis;
+}
+
 .grid-container *:after { 
  position: absolute;
  top: 0;
@@ -17,28 +22,37 @@ html, body, .grid-container { height: 100%; margin: 0; }
   grid-template-rows: 8% 1fr 5%;
   grid-template-areas: "header header header" 
                        ". courts court-view" 
-                       ". . .";
+                       'footer footer footer';
+  grid-row-gap: 10%;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   .grid-container {
     grid-template-columns: 1fr;
-    grid-template-rows: 5% 1fr 1fr;
+    grid-template-rows: 4% 1fr auto;
     grid-template-areas: "header"
                          "courts"
-                         "court-view"
+                         "court-view";
+    grid-row-gap: 0;
   }
 }
 
 .header {
-  padding: 0px;
-  background-color: grey;
+  padding: 0 2%;
+  background-color: #006A96;
+  color: #ffffff;
   grid-area: header;
+  border-bottom: solid 3px #ffcd00;
+}
+
+.header * {
+  color: #ffffff;
+  padding: 0 1%;
 }
 
 .courts {
   display: grid;
-  padding: 0px 20px;
+  padding: 0px 5vw;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: "court-6 court-3" 
@@ -46,6 +60,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
                        "court-4 court-1";
   gap: 1rem; 
   grid-area: courts;
+  max-width: 90vw;
 }
 
 .court-1, .court-2, .court-3, .court-4, .court-5, .court-6 {
@@ -53,7 +68,10 @@ html, body, .grid-container { height: 100%; margin: 0; }
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 3fr 2fr;
   grid-template-areas: "." "." "queue-button";
-  grid-area: court-1;
+  background-color: lightgray;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  position: relative;
 }
 
 .queue-button { grid-area: queue-button; }
@@ -72,16 +90,45 @@ html, body, .grid-container { height: 100%; margin: 0; }
 
 .court-view {
   height: 100%;
-  padding: 20px 20px;
-  display: grid;
+  padding: 0 20px;
+  /* display: grid;
   grid-template-rows: auto repeat(auto, 1em);
   grid-template-areas: 'title' '.' '.' '.' '.' '.';
   column-gap: 1em;
-  grid-auto-flow: column;
-  grid-area: court-view; 
+  grid-auto-flow: column; */
+  grid-area: court-view;  
 }
 
 .court-view * {
   margin: 0px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
+.login-modal {
+  background-color: grey;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+}
+
+/* .queue {
+  display:block;
+  width: 100px;
+  overflow: hidden;
+} */
+
+.courtview-items {
+  /* display: flex;
+  flex: none;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: auto; */
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(6,auto);
+}

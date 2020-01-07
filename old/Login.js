@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { addToDb, addUser } from '../database/dbfunctions';
+import { addUser } from '../database/dbfunctions';
 
-export default function Login({show, close}) {
+export default function Login({className, show, close}) {
 
   const [name, setName] = useState(null);
   const [pid, setPid] = useState(null)
@@ -10,15 +10,15 @@ export default function Login({show, close}) {
     e.preventDefault();
     localStorage.setItem("name", name);
     localStorage.setItem("pid", pid);
-    addUser(pid);
+    addUser({pid:pid, court:0});
     close();
   }
-  if(!show) {
+  if(show!=='login') {
     return null;
   }
   return (
     <div>
-      <form onSubmit={login}>
+      <form className={className} onSubmit={login}>
       Name
       <input
         type='text'
@@ -33,7 +33,7 @@ export default function Login({show, close}) {
         type='submit'
       />
       </form>
-      <button onClick={close}>Close</button>
+      {/* <button onClick={close}>Close</button> */}
     </div>
   )
 }

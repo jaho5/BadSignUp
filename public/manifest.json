@@ -1,0 +1,6 @@
+{
+    "name": "BadSignUp",
+    "short_name": "BadSignUp",
+    "start_url": "/index.html",
+    "display": "standalone"
+  }

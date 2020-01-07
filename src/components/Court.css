@@ -1,0 +1,15 @@
+div {
+    color: #006A96;
+}
+
+.court-title {
+    font-size: 1.17em;
+    background-color: #B6B1A9;
+    border-radius: 2px 2px 0 0;
+}
+
+.challenge-button {
+    display: inline-block;
+    width: 49%;
+    height: 100%;
+}
