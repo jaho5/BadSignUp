@@ -2,7 +2,7 @@ import socketIOClient from "socket.io-client";
 
 class SocketHandler {
     constructor() {
-        this.socket = socketIOClient('10.0.0.12:5000/');
+        this.socket = socketIOClient('localhost:5000/');
         this.setFunc = () => {};
 
         console.log('socket on')

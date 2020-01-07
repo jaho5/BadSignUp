@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './Court.css';
 import socketIOClient from "socket.io-client";
 
-const socket = socketIOClient('10.0.0.12:5000/');
+const socket = socketIOClient('localhost:5000/');
 
 export default function Court({className, courtNum, onClick, login}) {
 
